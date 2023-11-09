@@ -7,8 +7,7 @@ INSERT INTO authorities (user_id, authority) VALUES (1, 'ROLE_MANAGER');
 INSERT INTO authorities (user_id, authority) VALUES (1, 'ROLE_ADMIN');
 INSERT INTO authorities (user_id, authority) VALUES (2, 'ROLE_USER');  
 
-INSERT INTO hotels (name, enabled) VALUES ('ultra1', 1);
-INSERT INTO hotels (name, enabled) VALUES ('ultra2', 1);
-INSERT INTO hotels (name, enabled) VALUES ('ultra3', 1);
-INSERT INTO hotels (name, enabled) VALUES ('ultra4', 1);
-INSERT INTO hotels (name, enabled) VALUES ('ultra5', 1);
+INSERT INTO hotels (name, enabled) VALUES ("ultraHotel1", true);
+INSERT INTO hotels (name, enabled) VALUES ("ultraHotel2", true);
+INSERT INTO hotels (name, enabled) VALUES ("ultraHotel3", true);
+INSERT INTO hotels (name, enabled) VALUES ("ultraHotel4", false);

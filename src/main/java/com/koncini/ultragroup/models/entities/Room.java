@@ -40,21 +40,19 @@ public class Room {
 	private List<Reservation> reservations;
 
 	@Column(name = "base_price")
-	private Long basePrice;
+	private Integer basePrice;
 
-	private Long tax;
+	private Integer tax;
 
 	private String details;
 
 	@Column(name = "room_type")
 	private String roomType;
 
-	private Double latitude;
-
-	private Double longitude;
+	private Integer location;
 
 	private Boolean enabled;
-	
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -83,19 +81,19 @@ public class Room {
 		this.reservations = reservations;
 	}
 
-	public Long getBasePrice() {
+	public Integer getBasePrice() {
 		return basePrice;
 	}
 
-	public void setBasePrice(Long basePrice) {
+	public void setBasePrice(Integer basePrice) {
 		this.basePrice = basePrice;
 	}
 
-	public Long getTax() {
+	public Integer getTax() {
 		return tax;
 	}
 
-	public void setTax(Long tax) {
+	public void setTax(Integer tax) {
 		this.tax = tax;
 	}
 
@@ -115,20 +113,12 @@ public class Room {
 		this.roomType = roomType;
 	}
 
-	public Double getLatitude() {
-		return latitude;
+	public Integer getLocation() {
+		return location;
 	}
 
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-
-	public Double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
+	public void setLocation(Integer location) {
+		this.location = location;
 	}
 
 	public Boolean getEnabled() {
