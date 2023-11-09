@@ -104,6 +104,16 @@ public class DataServiceImpl implements IDataService {
 	}
 
 	@Override
+	public Integer getReservationDuration(Long id) {
+		return reservationDao.getReservationDurationInDays(id);
+	}
+	
+	@Override
+	public List<Reservation> findAllReservationsByHotel(Long id) {
+		return reservationDao.findAllReservationsByHotelId(id);
+	}
+
+	@Override
 	public void saveUser(User user) {
 		userDao.save(user);
 	}

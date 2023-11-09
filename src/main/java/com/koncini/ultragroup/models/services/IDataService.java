@@ -39,6 +39,10 @@ public interface IDataService {
 
 	public Reservation getOneReservation(Long id);
 	
+	public Integer getReservationDuration(Long id);
+	
+	public List<Reservation> findAllReservationsByHotel(Long id);
+	
 	//User Declarations
 	
 	public void saveUser(User user);
