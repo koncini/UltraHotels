@@ -1,6 +1,7 @@
 package com.koncini.ultragroup.models.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -13,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "users")
@@ -53,6 +56,10 @@ public class User implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Role> roles;
+	
+	@Column(name = "last_login")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastLogin;
 	
 	public Long getId() {
 		return id;

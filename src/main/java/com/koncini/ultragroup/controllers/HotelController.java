@@ -50,6 +50,22 @@ public class HotelController {
 		}
 	}
 
+	@PutMapping("/edit/{hotel-id}")
+	private ResponseEntity<String> editHotel(@RequestBody Map<String, Object> requestBody,
+			@PathVariable(value = "hotel-id") Long id) {
+		Hotel hotel = dataService.getOneHotel(id);
+		if (hotel == null) {
+			return ResponseEntity.ok("Requested Hotel Does not Exist");
+		}
+
+		try {
+			dataService.saveHotel(hotel);
+			return ResponseEntity.ok("Hotel Status Updated Succesfully");
+		} catch (Error e) {
+			return ResponseEntity.ok("Request Error");
+		}
+	}
+
 	@PutMapping("/enable-disable/{hotel-id}")
 	private ResponseEntity<String> enableDisable(@PathVariable(value = "hotel-id") Long id) {
 		Hotel hotel = dataService.getOneHotel(id);
